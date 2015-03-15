@@ -1,10 +1,3 @@
-/**
- * This is the extension background code
- * Copyright 2014 protectlogic.com
- * Author: Cory Marsh (root@xsstools.com)
- * TODO: add a new chrome listener so that we can figure out what the server resposne is for the main_frame
- */
-
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-57409305-1']);
 _gaq.push(['_trackPageview']);
