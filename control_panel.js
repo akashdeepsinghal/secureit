@@ -151,6 +151,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
 	});
 
+	// csrf plugin enabled
+	elm = document.getElementById("csrf");
+	elm.addEventListener("change", function() {
+		var name = this.getAttribute("data-plugin");
+		console.log("this", this.checked);
+		chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
+	});
+
 });
 
 chrome.extension.sendMessage({"type":20}, function(result) {
