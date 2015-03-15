@@ -58,6 +58,7 @@ function save_record() {
 function updatetarget() {
 	console.log("UPDATE TARGET");
 	chrome.extension.sendMessage({"type":18, "target": document.getElementById("target_dom").value, "delay": document.getElementById("test_delay").value});
+	window.close();
 	//confirm("test");
 	//alert("test");
 
