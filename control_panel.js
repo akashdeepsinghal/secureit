@@ -119,45 +119,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	var btn = document.getElementById("target_dom_save");
 	btn.addEventListener('click', updatetarget);
 
-	// xss plugin enabled
-	var elm = document.getElementById("xss");
-	elm.addEventListener("change", function() {
-		var name = this.getAttribute("data-plugin");
-		console.log("this", this.checked);
-		chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
-	});
-
-	// mysql plugin enabled
-	elm = document.getElementById("mysql");
-	elm.addEventListener("change", function() {
-		var name = this.getAttribute("data-plugin");
-		console.log("this", this.checked);
-		chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
-	});
-
-	// mssql plugin enabled
-	elm = document.getElementById("mssql");
-	elm.addEventListener("change", function() {
-		var name = this.getAttribute("data-plugin");
-		console.log("this", this.checked);
-		chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
-	});
-
-	// lfi plugin enabled
-	elm = document.getElementById("lfi");
-	elm.addEventListener("change", function() {
-		var name = this.getAttribute("data-plugin");
-		console.log("this", this.checked);
-		chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
-	});
-
-	// csrf plugin enabled
-	elm = document.getElementById("csrf");
-	elm.addEventListener("change", function() {
-		var name = this.getAttribute("data-plugin");
-		console.log("this", this.checked);
-		chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
-	});
+	// Check for all
+	var threats = ['xss', 'mysql', 'mssql', 'lfi', 'csrf'] //CSRF is new
+	for (i = 0; i < threats.length; i++) { 
+		var elm = document.getElementById(threats[i]);
+		elm.addEventListener("change", function() {
+			var name = this.getAttribute("data-plugin");
+			console.log("this", this.checked);
+			chrome.extension.sendMessage({"type":20, "name":name, "enabled":this.checked});
+		});
+	}
 
 });
 
@@ -170,4 +141,3 @@ chrome.extension.sendMessage({"type":20}, function(result) {
 		}
 	}
 });
-
