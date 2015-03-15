@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>SecureIt</title>
+<link rel="stylesheet" type="text/css" href="infobar.css" />
+<body class="bg-white3" style="padding:0;margin:0;">
+	<img class="bg" src="/carbon3.jpg" style="z-index:-1"/>
+	<div id="ht-title" class="bg-base01"><h1 style="text-align:left;margin-left:50px" class="base3"><span class="base3">H</span>ack<span class="base3"> T</span>ab</h1><h4 class="base1">by ProtectLogic</h4></div>
+	<div id="content" style="padding:50px;padding-top:0;">
+
+	<ul id="alert" class="bg-base3">
+		<!--li>
+		<img src="/important.png" class="left" style="width:16; margin-right: 30px;" />
+		<span>
+		Warning: [<span class="red">info</span>] parameter in url: [<span class="violet">/signup</span>] are vulnerable to reflected cross site scripting.
+		</span>
+		</li-->
+	</ul>
+
+
+	<table cellpadding="0" cellspacing="0" id="urltab" style="margin: 50px auto;border: 2px solid #C0C0C0; border-radius: 2px;">
+		<thead>
+		<tr class="bg-white base1" id="tblhdr">
+			<th id="status"></th>
+			<th id="ident">id</th>
+			<th id="method">method</th>
+			<th id="host">host</th>
+			<th id="path">path</th>
+			<th id="bytes">size</th>
+			<th id="params">param</th>
+			<th id="squash">mime</th>
+			<th id="action"></th>
+			<!--
+			<th id="tests">tests</th>
+			<th id="attack">attack</th>
+			-->
+		</tr>
+		</thead>
+		<tbody id="urlbody">
+		</tbody>
+	</table>
+
+	<ul id="notice">
+	</ul>
+
+	<div class="hidden" id="volatile">
+		<p>The value of this parameter will be fetched from the following url:<p>
+		<input id="volatile_comb_id" name="volatile_comb_id" type="text" style="width:10%;float:left;" disabled="disabled" />
+		<input id="volatile_url" name="volatile_url" type="text" style="width:89%;float: right;" disabled="disabled" />
+		<br />
+		<p>This regex will be used to catpure the volatile data:<br />
+		<small class="base01">(capture group 1 is the saved data)</small></p>
+		<input id="volatile_regex" name="volatile_regex" type="text" style="width:100%" />
+		<br /> <br />
+
+		<button id="volatile_save">save</button> <button id="volatile_cancel">cancel</button>
+	</div>
+
+	</div>
+	<script type="text/javascript" src="hacktab.js"></script>
+	<script type="text/javascript" src="common.js"></script>
+</body>
+</html> 
+ 

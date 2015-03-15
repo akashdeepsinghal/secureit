@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SecureIt Control Panel</title>
+    <style>
+      body {
+        min-width: 600px;
+        overflow-x: hidden;
+		font-family: sans-serif;
+		font-size: 1em;
+		/*
+		color: #999;
+		*/
+      }
+
+	  div#container {
+		  position:relative;
+		  margin:0;
+		  padding:0;
+	  }
+	  /*
+	  div#container::after {
+		content: "";
+		background-image: url('/carbon3.jpg');
+		opacity: 0.5;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		position:absolute;
+		z-index:-1;
+	  }
+	  */
+	
+
+      img {
+        margin: 5px;
+		cursor: pointer;
+      }
+	  .hidden {
+		  display: none;
+	  }
+	  .left {
+		  float: left;
+	  }
+	  label {
+		  width: 200px;
+		  display: block;
+		  float: left;
+	  }
+	  input {
+		  width: 250px;
+		  display: block;
+		  float: left;
+		  margin-right: 25px;
+	  }
+	  div.opt {
+		  width: 410px;
+	  }
+	  img#loading_img {
+		  display: block;
+		  margin: 0 auto;
+	  }
+
+.base03 { color: #002b36; }
+.base02 { color: #073642; }
+.base01 { color: #586e75; }
+.base00 { color: #657b83; }
+.base0 { color: #839496; }
+.base1 { color: #93a1a1; }
+.base2 { color: #eee8d5; }
+.base3 { color: #fdf6e3; }
+.yellow { color: #b58900; }
+.orange { color: #cb4b16; }
+.red { color: #dc322f; }
+.magenta { color: #d33682; }
+.violet { color: #6c71c4; }
+.blue { color: #268bd2; }
+.cyan { color: #2aa198; }
+.green { color: #859900; }
+.white { color: #F5F5F5; }
+.black { color: #050505; }
+
+	input.check { vertical-align: top; margin-top:-2px; }
+
+
+	h2 { text-align: center; }
+
+    </style>
+
+    <script src="control_panel.js"></script>
+  </head>
+  <body class="base1">
+  <div id="container">
+	<h2 class="orange">SecureIt Configuration <small class="base01">1.0</span></h2>
+	<p style="text-align:center; margin-top:-15px;">CSRF extension to HackTab security tests</p>
+	<p class="base0">All web requests to the target domain will be recorded in the local extension instance and used to craft security tests in the SecureIt.  Currently the url path is ignored and only the host is matched.  Target domain is a REGULAR EXPRESSION.</p>
+
+	<p class="violet">Depending on which application parameters you test, SecureIt will run the applcation for the urls you test.  If those urls store or remove data, SecureIt will create and or remove test data on the server. If in doubt, test in a sandbox.</p>
+
+	<p>CSRF extension to HackTab security tests</p>
+
+	<label><strong>Target Domain:</strong></label> <input id="target_dom" type="text" name="target_dom" /><br/> <br />
+	<label><strong>Test Delay (ms):</strong></label> <input id="test_delay" type="text" name="test_delay" /><br /><br />
+	<button class="left" id="target_dom_save">SAVE</button><br /><br />
+	<hr class="base3" />
+	<br /><br />
+
+	<label><strong>Enable Reflected XSS:</strong></label> <input id="xss" name="xss" type="checkbox" checked="checked" class="check" data-plugin="xss" /><br /><br />
+	<label><strong>Enable MySql Injection:</strong></label> <input id="mysql" name="mysql" type="checkbox" checked="checked" class="check" data-plugin="mysql" /><br /><br />
+	<label><strong>Enable MSSQL Injection:</strong></label> <input id="mssql" name="mssql" type="checkbox" checked="checked" class="check" data-plugin="mssql" /><br /><br />
+	<label><strong>Enable Local File Include:</strong></label> <input id="lfi" name="lfi" type="checkbox" checked="checked" class="check" data-plugin="lfi" /><br /><br />
+	<label><strong>Enable CSRF:</strong></label> <input id="csrf" name="csrf" type="checkbox" checked="checked" class="check" data-plugin="csrf" /><br /><br />
+</div>
+  </body>
+</html>
+

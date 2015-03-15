@@ -1,0 +1,46 @@
+<html>
+<body>
+<!--
+<script src="diffview.js"></script>
+-->
+<script src="common.js"></script>
+
+<script>
+
+/*
+ * - baseTextLines: the array of strings that was used as the base
+ *       text input to SequenceMatcher
+ * - newTextLines: the array of strings that was used as the new
+ *       text input to SequenceMatcher
+ * - baseTextName: the title to be displayed above the base text
+ *       listing in the diff view; defaults to "Base Text"
+ * - newTextName: the title to be displayed above the new text
+ *       listing in the diff view; defaults to "New Text"
+ * - contextSize: the number of lines of context to show around
+ *       differences; by default, all lines are shown
+ * - inline: if not true, a side-by-side diff view is generated
+ *       (default); if true, an inline diff view is generated
+ * - tchar: the character(s) comprising a code indentation; this
+ *          defaults to an empty string
+ * - tsize: the number of tchar characters to comprise a single code
+ *       indentation; this defaults to 1 if tchar is not an empty string
+ */
+
+var o = "this is the base text\nwith 2 lines of text\nand 1 more";
+var n = "this is the base text\nwith 2232 lines of text\nand 1 more and additional text";
+
+//var dv = new diffview({"baseTextLines":bt, "newTextLines":nl, "contextSize":3, "inline":false});
+
+//var dv = diffString(o, n);
+var dv = Content.diff.string(o,n);
+//var dv = diff(o == "" ? [] : o.split(/\s+/), n == "" ? [] : n.split(/\s+/) );
+//var dv = diff(bt, nl);
+console.log(dv);
+
+
+
+</script>
+
+</body>
+</html> 
+ 

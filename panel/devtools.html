@@ -1,0 +1,302 @@
+<html>
+	<head>
+		<style type="text/css">
+			.hidden { display: none; }
+			.left { display: block; float: left; }
+			.right { display: block; float: right; }
+			.pointer { cursor: pointer; }
+			.bold { font-weight: bold; }
+
+			.p100 { display: block; width: 100%; }
+
+			.base03 { color : #002b36; }
+			.base02 { color: #073642; }
+			.base01 { color: #586e75; }
+			.base00 { color: #657b83; }
+			.base0 { color: #839496; }
+			.base1 { color: #93a1a1; }
+			.base2 { color: #eee8d5; }
+			.base3 { color: #fdf6e3; }
+			.yellow { color: #b58900; }
+			.orange { color: #cb4b16; }
+			.red { color: #dc322f; }
+			.magenta { color: #d33682; }
+			.violet { color: #6c71c4; }
+			.blue { color: #268bd2; }
+			.cyan { color: #2aa198; }
+			.green { color: #859900; }
+
+			.bg-base03 { background-color : #002b36; }
+			.bg-base02 { background-color: #073642; }
+			.bg-base01 { background-color: #586e75; }
+			.bg-base00 { background-color: #657b83; }
+			.bg-base0 { background-color: #839496; }
+			.bg-base1 { background-color: #93a1a1; }
+			.bg-base2 { background-color: #eee8d5; }
+			.bg-base3 { background-color: #fdf6e3; }
+			.bg-yellow { background-color: #b58900; }
+			.bg-orange { background-color: #cb4b16; }
+			.bg-red { background-color: #dc322f; }
+			.bg-magenta { background-color: #d33682; }
+			.bg-violet { background-color: #6c71c4; }
+			.bg-blue { background-color: #268bd2; }
+			.bg-cyan { background-color: #2aa198; }
+			.bg-green { background-color: #859900; }
+
+			ol.menu {
+				line-height: 16px;
+				height: 24px;
+				border-bottom: 1px solid #93a1a1;
+				margin: 0;
+				padding: 0;
+			}
+			ol.menu li {
+				display: block;
+				float: left;
+				margin: 0px 15px;
+				padding: 0px;
+				cursor: pointer;
+				font-weight: bold;
+			}
+			br.br {
+				clear: left;
+			}
+			* {
+				font-family: monospace;
+			}
+			ol#recordings {
+				display: block;
+				width: 250px;
+				float: left;
+				border: 0px;
+				border-right: 1px solid #93a1a1;
+				overflow: auto;
+			}
+
+			div#nav {
+				resize: horizontal;
+				border: none;
+				border-right: 1px solid #999;
+				width: 10%;
+				height: 200px;
+				display: block;
+				overflow: scroll;
+				padding: 0;
+				margin: 0;
+				float: left;
+				min-width: 200px;
+				max-width: 400px;
+			}
+
+			div#content {
+				height: 200px;
+				margin: 0;
+				float: left;
+				padding-top:38px;
+				position: relative;
+			}
+			div#paramtitle
+
+			div#content label.info {
+				width: 150px;
+				display: block;
+				float: left;
+				padding-left: 10px;
+				line-height: 20px;
+			}
+			/*
+			div#content input {
+				clear: left;
+				margin: 2;
+				font-family: sans-serif, arial;
+			}
+			*/
+			body {
+				min-width: 600px;
+				margin: 0;
+				padding: 0;
+			}
+
+			div#param {
+				position: absolute;
+				left: 33px;
+				width: 100%;
+				float: left;
+
+			}
+
+			div#content-menu img {
+				cursor: pointer;
+				display: block;
+				margin:4px;
+			}
+
+			div#content-menu {
+				float: left;
+				padding: 3px;
+				width: 24px;
+				display: block;
+				height: 100px;
+				margin-right:10px;
+			}
+
+			input.pvalue {
+				display: block;
+				width: 30%;
+			}
+
+			select#param_type_opt {
+				display: block; 
+				float: left;
+			}
+
+			div#req_container {
+				position: absolute;
+				top: 35;
+				left: 0;
+				width: 100%;
+				background-color: transparant;
+				margin-top:-32px;
+				border-bottom: 1px solid #919191;
+				height: 26px;
+				z-index: 9;
+			}
+
+			div#content_container {
+				position: relative;
+			}
+
+			textarea.req {
+				display: block;
+				width: 40%;
+				height: 20px;
+				float: left;
+			}
+
+			label.req {
+				margin-left: 10px;
+				display: block;
+				float: left;
+				width: auto;
+			}
+
+			ol#url_list {
+				list-style-type: none;
+				padding-left: 20px;
+			}
+			ol#url_list li {
+				font-size: 12px;
+				font-family: arial;
+				margin-left: 0px;
+				cursor: pointer;
+			}
+
+			li.img {
+				background-size: 14px 14px;
+				background-repeat: no-repeat;
+				background-position: 0px 0px; 
+				padding-left: 16px;
+			}
+			li.get {
+				background-image: url(../download.png);
+			}
+
+
+		</style>
+	</head>
+	<body class="base02">
+		<div class="p100 left" id="container">
+	 	<div id="nav" class="bg-base3">
+			<ol id="menu" class="menu bg-base2">
+				<li>tests</li>
+				<li>pages</li>
+				<li><img width="16" src="/redoo.png" id="menu_reload"/></li>
+			</ol>
+			<ol id="url_list">
+				<li>www.hacktab.com/foobar</li>
+			</ol>
+		</div>
+		<div id="content" class="bg-base2">
+		<div id="output">this is some test output data</div>
+			<div class="" id="req_container">
+				<label class="bg-base3 req" >GET:</label><textarea id="get_input" type="text" name="get_request" class="req"></textarea><label class="bg-base3 req">POST:</label><textarea id="post_input" type="text" name="post_data" class="req"></textarea><button id="send_button">send</button><br />
+			</div>
+
+			<div id="content_container" class="left p100">
+
+			<div id="content-menu" class="left bg-base00">
+				<img width="16" src="../hammer16.png" id="show_config" />
+				<img width="16" src="../check.png" id="show_param" />
+			</div>
+
+
+			<div id="config" class="bg-base0 hidden">
+				<div id="resp_list">
+				</div>
+				<input id="new_resp_name" name="new_resp_name" type="text" placeholder="response name" style="width:150px;float:left;" />
+				<div id="add_resp_container" class="left">
+				</div>
+				<img id="add_new_resp" src="/img/list_add.png" width="20" style="margin-left:8px;" class="left pointer" />
+			</div>
+
+
+			<div id="param" class="bg-base0 left">
+				<table id="param_table" cellspacing="0" cellpadding="0" class="left p100" style="">
+					<th>
+						<td>param name</td>
+						<td>type</td>
+						<td>saved values</td>
+					</th>
+				<tr><td>
+					<label class="left bold" style="width:20%;">Type: </label>
+					<select class="left" id="param_type">
+						<option>uuid</option>
+						<option>sql id</option>
+						<option>mongo id</option>
+						<option>couchdb</option>
+						<option>boolean</option>
+						<option>numeric</option>
+						<option>english word</option>
+						<option>english words</option>
+						<option>base64</option>
+					</select>
+				</td>
+				<!--
+				<td><label class="left bold">Result</label></td>
+				<td><label class="left bold">Test Time</label></td>
+				<td><label class="left bold">Test Type</label></td>
+				-->
+				</tr>
+				<tr>
+					<td>
+					</td>
+				</tr>
+				</table>
+			</div>
+
+
+				<div style="padding: 0 20 20 20" id="content-control">
+					<img id="config_save" width="32" src="/code/xsstools/public/img/save.png" alt="Save" title="Save" class="right pointer" />
+				</div>
+
+			</div>
+
+			</div>
+
+
+			<label class="left">Url Params:</label>
+			<ol id="param_list" class="menu magenta">
+			</ol>
+
+		</div>
+		</div>
+		<script src="../common.js" type="text/javascript"></script>
+		<script src="../detect_resize.js" type="text/javascript"></script>
+		<script src="../apicall.js" type="text/javascript"></script>
+		<script src="devtools.js" type="text/javascript"></script>
+		<!--
+		<script type="text/javascript">alert("dev tools");console.log("devtools.js");</script>
+		-->
+	</body>
+</html>
+
