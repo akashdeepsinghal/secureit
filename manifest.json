@@ -1,9 +1,8 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
   "name": "Secure It Web Security Tests",
   "short_name": "SecureIt",
   "version": "1.0",
+  "author": "Akash Deep Singhal",
   "description": "Test web applications for Cross Site Scripting, SQL Injection, Local File Inclusion and CSRF attacks from Chrome.",
   "permissions": ["webRequest", "tabs", "storage", "webRequestBlocking", "http://*/", "https://*/"],
   "background": {
@@ -27,13 +26,7 @@
 	  "js": ["common.js", "apicall.js", "xssploit.js", "basePlugin.js", "xhrproxy.js", "sqliplugin.js", "xssPlugin.js", "lfiplugin.js"],
 	  "run_at": "document_start"
   }],
-  "icons": {
-	  "16": "horns.png",
-	  "48": "horns.png",
-	  "128":"horns.png"
-  },
   "web_accessible_resources": [ "*" ],
   "manifest_version": 2,
   "content_security_policy": "default-src 'self' chrome-extension-resource: ; style-src 'self' 'unsafe-inline'; script-src 'self' https://ssl.google-analytics.com; img-src *; frame-src *; connect-src *; object-src 'self'"
 }
-
